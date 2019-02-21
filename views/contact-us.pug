@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+    h1 Contact Us
+    if success
+      .alert.alert-success(role="alert") Your message has been sent!
+    if failure
+      .alert.alert-danger(role="alert")= failure
+
+    form(method="post")
+      .form-group
+        label Name
+        input.form-control(type="text", name="name", placeholder="Your name")
+      .form-group
+        label Email
+        input.form-control(type="email", name="email", placeholder="example@domain.com")
+      .form-group
+        label Message
+        textarea.form-control(name="message", rows="4")
+      button.btn.btn-primary(type="submit") Submit
